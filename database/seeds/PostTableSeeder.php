@@ -17,7 +17,7 @@ class PostTableSeeder extends Seeder
         // use Faker\Generator as Faker;
         // popolo la tabella con dati fake con ciclo for
 
-        for ($i=0; $i < 50; $i++) {
+        for ($i=0; $i < 20; $i++) {
 
             $new_post = new Post();
 
