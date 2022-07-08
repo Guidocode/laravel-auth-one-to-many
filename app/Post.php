@@ -9,7 +9,7 @@ class Post extends Model
 {
 
     // creo collegamento con Category
-    public function joinCategory(){
+    public function category(){
         return $this->belongsTo('App\Category');
     }
 
