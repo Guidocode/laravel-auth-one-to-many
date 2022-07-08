@@ -73,14 +73,23 @@
                                     <div class="ms-2 me-auto fw-bold">
                                         {{$post->title}}
                                     </div>
-                                    <span class="badge bg-primary rounded-pill">14</span>
+                                    <div class="d-flex">
+                                        <a class="btn btn-success mx-1" href="{{ route('admin.posts.show', $post) }}">SHOW</a>
+                                        <a class="btn btn-primary mx-1" href="{{ route('admin.posts.edit', $post) }}">EDIT</a>
+                                        <form class="d-inline mx-1"
+                                            onsubmit="return confirm('confermi l\'eliminazione di: {{ $post->title }}?')"
+                                            action="{{ route('admin.posts.destroy', $post) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger" >DELETE</button>
+                                        </form>
+                                    </div>
                                 </li>
                             @empty
                                 <li class="list-group-item d-flex justify-content-between align-items-start">
                                     <div class="ms-2 me-auto fw-bold">
                                         Nessun post appartenente a questa categoria
                                     </div>
-                                    <span class="badge bg-primary rounded-pill">14</span>
                                 </li>
                             @endforelse
 
