@@ -49357,33 +49357,33 @@ var app = new Vue({
   data: {
     isError: false
   }
-});
-$().ready(function () {
-  $('form').submit(function (event) {
-    $('#error-title').hide();
-    $('#error-image').hide();
-    $('#error-description').hide();
-
-    if ($('#title').val().length === 0 || $('#image').val().length === 0 || $('#description').val().length === 0) {
-      $('#error-title').show('slow').text('Il titolo è un campo obbligatorio').fadeOut(5000);
-      $('#error-image').show('slow').text('L\'immagine è un campo obbligatorio').fadeOut(5000);
-      $('#error-description').show('slow').text('La descrizione è un campo obbligatorio').fadeOut(5000);
-      isError = true;
-    } else if ($('#title').val().length < 3 || $('#image').val().length < 3 || $('#description').val().length < 3) {
-      $('#error-title').show('slow').text('Deve contenere minimo 3 caratteri').fadeOut(5000);
-      $('#error-image').show('slow').text('L\'url deve contenere minimo 3 caratteri').fadeOut(5000);
-      $('#error-description').show('slow').text('La descrizione deve contenere minimo 3 caratteri').fadeOut(5000);
-      isError = true;
-    } else if ($('#title').val().length > 100 || $('#image').val().length > 255 || $('#description').val().length > 500) {
-      $('#error-title').show('slow').text('Può contenere massimo 100 caratteri').fadeOut(5000);
-      $('#error-image').show('slow').text('Può contenere massimo 255 caratteri').fadeOut(5000);
-      $('#error-description').show('slow').text('Può contenere massimo 500 caratteri').fadeOut(5000);
-      isError = true;
-    }
-
-    event.preventDefault();
-  }); // console.log('ciao');
-});
+}); // $().ready(function(){
+//     $('form' ).submit(function(event) {
+//         $('#error-title').hide();
+//         $('#error-image').hide();
+//         $('#error-description').hide();
+//         // $('#error-category-id').hide();
+//         if(($('#title'). val().length === 0) || ($('#image'). val().length === 0) || ($('#description'). val().length === 0)){
+//             $( '#error-title').show('slow').text('Il titolo è un campo obbligatorio').fadeOut(5000);
+//             $( '#error-image').show('slow').text('L\'immagine è un campo obbligatorio').fadeOut(5000);
+//             $( '#error-description').show('slow').text('La descrizione è un campo obbligatorio').fadeOut(5000);
+//             // $( '#error-category-id').show('slow').text('Seleziona una voce').fadeOut(5000);
+//              isError = true;
+//         }else if(($('#title'). val().length < 3) || ($('#image'). val().length < 3) || ($('#description'). val().length < 3)){
+//             $( '#error-title').show('slow').text('Deve contenere minimo 3 caratteri').fadeOut(5000);
+//             $( '#error-image').show('slow').text('L\'url deve contenere minimo 3 caratteri').fadeOut(5000);
+//             $( '#error-description').show('slow').text('La descrizione deve contenere minimo 3 caratteri').fadeOut(5000);
+//              isError = true;
+//         }else if(($('#title'). val().length > 100) || ($('#image'). val().length > 255) || ($('#description'). val().length > 500)){
+//             $( '#error-title').show('slow').text('Può contenere massimo 100 caratteri').fadeOut(5000);
+//             $( '#error-image').show('slow').text('Può contenere massimo 255 caratteri').fadeOut(5000);
+//             $( '#error-description').show('slow').text('Può contenere massimo 500 caratteri').fadeOut(5000);
+//              isError = true;
+//         }
+//         event.preventDefault();
+//     });
+//     // console.log('ciao');
+// });
 
 /***/ }),
 

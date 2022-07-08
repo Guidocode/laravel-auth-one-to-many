@@ -18,12 +18,14 @@ class PostController extends Controller
     public function index()
     {
         // mi vado a prendere i dati che voglio dal db e li passo alla view index
-
         $posts = Post::orderBy('id', 'desc')->paginate(5);
+
+        //prendo tutte le categorie e le passo alla show
+        $categories = Category::all();
 
         // dd($posts);
 
-        return view('admin.posts.index', compact('posts'));
+        return view('admin.posts.index', compact('posts', 'categories'));
     }
 
     /**
@@ -33,9 +35,12 @@ class PostController extends Controller
      */
     public function create()
     {
-        // ritorno alla view create
 
-        return view('admin.posts.create');
+        //prendo tutte le categorie e le passo alla show
+        $categories = Category::all();
+
+        // ritorno alla view create
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -55,6 +60,7 @@ class PostController extends Controller
         $new_post->fill($data);
 
         $new_post->save();
+        // dd($new_post);
 
         return redirect()->route('admin.posts.show', $new_post);
     }
@@ -87,7 +93,10 @@ class PostController extends Controller
         // modifico il record passato con id
         $post = Post::find($id);
 
-        return view('admin.posts.edit', compact('post'));
+        //prendo tutte le categorie e le passo alla show
+        $categories = Category::all();
+
+        return view('admin.posts.edit', compact('post', 'categories'));
 
     }
 

@@ -19,7 +19,6 @@
                 <p class="card-text">{{ $post->description }}</p>
 
                 <a class="btn btn-secondary mx-1" href="{{ route('admin.posts.index', $post) }}">GO BACK</a>
-                <a class="btn btn-success mx-1" href="{{ route('admin.posts.show', $post) }}">SHOW</a>
                 <a class="btn btn-primary mx-1" href="{{ route('admin.posts.edit', $post) }}">EDIT</a>
                 <form class="d-inline mx-1"
                     onsubmit="return confirm('confermi l\'eliminazione di: {{ $post->title }}?')"
