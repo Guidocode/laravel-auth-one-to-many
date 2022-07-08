@@ -7,6 +7,13 @@ use Illuminate\Support\Str;
 
 class Post extends Model
 {
+
+    // creo collegamento con Category
+    public function joinCategory(){
+        return $this->belongsTo('App\Category');
+    }
+
+
     // creo funzione statica che genera lo slug univoco
 
     public static function genereteSlug($title){

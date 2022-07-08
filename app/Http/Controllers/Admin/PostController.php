@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -19,9 +20,10 @@ class PostController extends Controller
         // mi vado a prendere i dati che voglio dal db e li passo alla view index
 
         $posts = Post::orderBy('id', 'desc')->paginate(5);
+        $categories = Category::all();
         // dd($posts);
 
-        return view('admin.posts.index', compact('posts'));
+        return view('admin.posts.index', compact('posts', 'categories'));
     }
 
     /**
