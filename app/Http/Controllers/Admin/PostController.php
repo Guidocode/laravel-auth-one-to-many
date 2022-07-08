@@ -20,7 +20,7 @@ class PostController extends Controller
         // mi vado a prendere i dati che voglio dal db e li passo alla view index
 
         $posts = Post::orderBy('id', 'desc')->paginate(5);
-        //$categories = Category::all();
+
         // dd($posts);
 
         return view('admin.posts.index', compact('posts'));
@@ -68,10 +68,12 @@ class PostController extends Controller
     public function show($id)
     {
         // vado a prendere il singolo record tramite id e lo passo alla view show
-
         $post = Post::find($id);
 
-        return view('admin.posts.show', compact('post'));
+        //prendo tutte le categorie e le passo alla show
+        $categories = Category::all();
+
+        return view('admin.posts.show', compact('post', 'categories'));
     }
 
     /**
