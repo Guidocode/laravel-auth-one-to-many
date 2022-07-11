@@ -8,7 +8,7 @@
 
                 <h1>Modifico il post: {{ $post->title }}</h1>
 
-                <form action="{{ route('admin.posts.update', $post, $post->category->id) }}" method="POST">
+                <form action="{{ route('admin.posts.update', $post, $post->category ? $post->category->id : '') }}" method="POST">
                     @csrf
                     @method('PUT')
 
@@ -42,10 +42,10 @@
                     </div>
 
                     <div class="mb-3">
-                        <select class="form-select" name="category id" required>
+                        <select class="form-select" name="category id">
                             <option value="">Seleziona una categoria</option>
                             @foreach ($categories as $category)
-                                <option value="{{$category->id}}" @if($category->id == old('category_id', $post->category->id)) selected @endif>
+                                <option value="{{$category->id}}" @if($category->id == old('category_id', $post->category ? $post->category->id : '')) selected @endif>
                                     {{$category->name}}
                                 </option>
                             @endforeach

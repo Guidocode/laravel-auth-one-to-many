@@ -29,7 +29,6 @@ class PostRequest extends FormRequest
             'title' => 'required|max:100|min:3',
             'image' => 'required|max:255|min:10',
             'description' => 'required|min:10',
-            'category_id' => 'required',
         ];
     }
 
@@ -44,7 +43,6 @@ class PostRequest extends FormRequest
             'image.min' => 'Deve contenere minimo :min caratteri',
             'description.required' => 'Campo obbligatorio',
             'description.min' => 'Deve contenere minimo :min caratteri',
-            'category_id.required' => 'Seleziona una voce',
         ];
     }
 }

@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <select class="form-select" name="category id" required>
+                        <select class="form-select" name="category id">
                             <option value="">Seleziona una categoria</option>
                             @foreach ($categories as $category)
                                 <option value="{{$category->id}}" @if($category->id == old('category_id')) selected @endif>
